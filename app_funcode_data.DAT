@@ -1,0 +1,792 @@
+;  文 件 名: app_funcode_data.DAT */
+;  日    期: Date:02/02/15, Time:20:05:25, Ver:v.001 */
+
+
+;每组功能码个数表:
+FUNNO_TABLE:
+	.WORD	16		;F00 Group.
+	.WORD	13		;F01 Group.
+	.WORD	17		;F02 Group.
+	.WORD	14		;F03 Group.
+	.WORD	12		;F04 Group.
+	.WORD	17		;F05 Group.
+	.WORD	33		;F06 Group.
+	.WORD	20		;F07 Group.
+	.WORD	24		;F08 Group.
+	.WORD	13		;F09 Group.
+	.WORD	9		;F10 Group.
+	.WORD	38		;F11 Group.
+	.WORD	7		;F12 Group.
+	.WORD	18		;F13 Group.
+	.WORD	10		;F14 Group.
+	.WORD	13		;F15 Group.
+
+
+TAB_TOTALFUNNO:
+	.WORD	274		;总功能码个数
+
+
+;参数下限表,压缩格式，只列出了非0值的功能码项
+;;......功能码绝对号.....下限值
+TAB_LOWERLIMIT:
+	.WORD	     78,	     78	;下限表记录数
+	.WORD	     11,	     10	;1....F00.11
+	.WORD	     14,	      1	;2....F00.14
+	.WORD	     15,	      1	;3....F00.15
+	.WORD	     18,	      4	;4....F01.02
+	.WORD	     19,	   1000	;5....F01.03
+	.WORD	     22,	      8	;6....F01.06
+	.WORD	     23,	      1	;7....F01.07
+	.WORD	     24,	      1	;8....F01.08
+	.WORD	     25,	      1	;9....F01.09
+	.WORD	     26,	      1	;10....F01.10
+	.WORD	     27,	      1	;11....F01.11
+	.WORD	     61,	      1	;12....F04.01
+	.WORD	     64,	      1	;13....F04.04
+	.WORD	     66,	     50	;14....F04.06
+	.WORD	     69,	  -2000	;15....F04.09
+	.WORD	     78,	      1	;16....F05.06
+	.WORD	     79,	      1	;17....F05.07
+	.WORD	     83,	      4	;18....F05.11
+	.WORD	     85,	   -200	;19....F05.13
+	.WORD	     86,	   -200	;20....F05.14
+	.WORD	     98,	      1	;21....F06.09
+	.WORD	    100,	      1	;22....F06.11
+	.WORD	    102,	  -1000	;23....F06.13
+	.WORD	    103,	  -1000	;24....F06.14
+	.WORD	    104,	  -1000	;25....F06.15
+	.WORD	    105,	  -1000	;26....F06.16
+	.WORD	    107,	  -1000	;27....F06.18
+	.WORD	    108,	  -1000	;28....F06.19
+	.WORD	    109,	  -1000	;29....F06.20
+	.WORD	    110,	  -1000	;30....F06.21
+	.WORD	    113,	  -1000	;31....F06.24
+	.WORD	    115,	  -1000	;32....F06.26
+	.WORD	    118,	  -1000	;33....F06.29
+	.WORD	    120,	  -1000	;34....F06.31
+	.WORD	    143,	     20	;35....F08.01
+	.WORD	    144,	    100	;36....F08.02
+	.WORD	    145,	      1	;37....F08.03
+	.WORD	    148,	    110	;38....F08.06
+	.WORD	    149,	     50	;39....F08.07
+	.WORD	    152,	    700	;40....F08.10
+	.WORD	    157,	      1	;41....F08.15
+	.WORD	    170,	  -1000	;42....F09.04
+	.WORD	    171,	  -1000	;43....F09.05
+	.WORD	    173,	      1	;44....F09.07
+	.WORD	    184,	      1	;45....F10.05
+	.WORD	    185,	      1	;46....F10.06
+	.WORD	    188,	  -1000	;47....F11.00
+	.WORD	    189,	  -1000	;48....F11.01
+	.WORD	    190,	  -1000	;49....F11.02
+	.WORD	    191,	  -1000	;50....F11.03
+	.WORD	    192,	  -1000	;51....F11.04
+	.WORD	    193,	  -1000	;52....F11.05
+	.WORD	    194,	  -1000	;53....F11.06
+	.WORD	    195,	  -1000	;54....F11.07
+	.WORD	    196,	  -1000	;55....F11.08
+	.WORD	    197,	  -1000	;56....F11.09
+	.WORD	    198,	  -1000	;57....F11.10
+	.WORD	    199,	  -1000	;58....F11.11
+	.WORD	    200,	  -1000	;59....F11.12
+	.WORD	    201,	  -1000	;60....F11.13
+	.WORD	    202,	  -1000	;61....F11.14
+	.WORD	    203,	  -1000	;62....F11.15
+	.WORD	    226,	      1	;63....F12.00
+	.WORD	    234,	      1	;64....F13.01
+	.WORD	    235,	      1	;65....F13.02
+	.WORD	    236,	      1	;66....F13.03
+	.WORD	    237,	      1	;67....F13.04
+	.WORD	    238,	      1	;68....F13.05
+	.WORD	    239,	      1	;69....F13.06
+	.WORD	    240,	      1	;70....F13.07
+	.WORD	    241,	      1	;71....F13.08
+	.WORD	    242,	      1	;72....F13.09
+	.WORD	    247,	   1150	;73....F13.14
+	.WORD	    264,	      4	;74....F15.03
+	.WORD	    267,	     32	;75....F15.06
+	.WORD	    270,	    500	;76....F15.09
+	.WORD	    271,	    500	;77....F15.10
+	.WORD	    272,	    500	;78....F15.11
+
+
+;参数上限表
+TAB_UPPERLIMIT:
+;F00.00~F00.15
+
+	.WORD      2,      2,      8,      8,      1,      3,  60000,  60000
+	.WORD  60000,  60000,      2,    150,      2,      1,  36000,  36000
+;F01.00~F01.12
+
+	.WORD      1,      1,  30000,  60000,  36000,    500,  60000,  65535
+	.WORD  65535,  65535,  65535,  65535,      2
+;F02.00~F02.16
+
+	.WORD      2,   2000,    600,   1600,    600,      1,      1,      1
+	.WORD  30000,      1,  10000,  60000,    600,   1600,    600,      2
+	.WORD  30000
+;F03.00~F03.13
+
+	.WORD      2,    100,    500,  60000,   1000,  60000,   1000,  60000
+	.WORD   1000,   2000,  60000,    100,    100,      1
+;F04.00~F04.11
+
+	.WORD    150,   1500,  60000,    150,   1000,  60000,    200,   2000
+	.WORD      5,   2000,      5,    500
+;F05.00~F05.16
+
+	.WORD      1,      2,      1,  65535,      4,      3,   9999,   9999
+	.WORD  65535,  65535,  65535,  30000,  60000,   1000,   1000,  65535
+	.WORD  65535
+;F06.00~F06.32
+
+	.WORD      1,     39,     39,     39,     39,     39,     39,     39
+	.WORD     39,     15,      3,   5000,      3,   1000,   1000,   1000
+	.WORD   1000,   1000,   1000,   1000,   1000,   1000,   1000,   1000
+	.WORD   1000,   1000,   1000,   1000,   5000,   1000,   5000,   1000
+	.WORD   1000
+;F07.00~F07.19
+
+	.WORD      1,     20,     20,     20,     20,     12,     12,     12
+	.WORD   1000,   1000,   1000,   1000,   1000,   1000,   1000,   1000
+	.WORD   1000,   5000,   1000,   5000
+;F08.00~F08.23
+
+	.WORD      2,   1000,   2000,    600,      4,      1,    150,    200
+	.WORD   5000,      1,   1100,  60000,      1,      1,      3,   1000
+	.WORD     24,     24,     24,  60000,  20000,  10000,     63,     15
+;F09.00~F09.12
+
+	.WORD      5,   1000,      4,      1,   1000,   1000,  10000,   1000
+	.WORD   1000,  10000,   1000,   1000,  30000
+;F10.00~F10.08
+
+	.WORD  60000,  60000,  60000,   1000,    500,  30000,  30000,  65535
+	.WORD  65535
+;F11.00~F11.37
+
+	.WORD   1000,   1000,   1000,   1000,   1000,   1000,   1000,   1000
+	.WORD   1000,   1000,   1000,   1000,   1000,   1000,   1000,   1000
+	.WORD      2,      1,      1,  65535,  65535,      1,  65535,  65535
+	.WORD  65535,  65535,  65535,  65535,  65535,  65535,  65535,  65535
+	.WORD  65535,  65535,  65535,  65535,  65535,  65535
+;F12.00~F12.06
+
+	.WORD    247,      5,      5,    200,   1000,      3,     17
+;F13.00~F13.17
+
+	.WORD  60000,  30000,  30000,  30000,  30000,  30000,  30000,  30000
+	.WORD  30000,  30000,  60000,   1000,   1000,   1000,   1400,      1
+	.WORD      1,  65535
+;F14.00~F14.09
+
+	.WORD      1,      1,      1,      1,      1,      1,      1,      1
+	.WORD      1,      1
+;F15.00~F15.12
+
+	.WORD  65535,      1,     31,  30000,    800,  20000,    160,  10000
+	.WORD  10000,   2500,   2000,   2000,  65535
+
+
+;下关联表,压缩格式,只列出了有关联的功能码项
+;;.....功能码绝对号....下关联功能码号
+TAB_LOWERRELATION:
+	.WORD      6,      6	;下关联表记录数
+	.WORD      6,   0007H	;1...F00.06
+	.WORD      7,   0008H	;2...F00.07
+	.WORD     51,   0303H	;3...F03.05
+	.WORD     53,   0305H	;4...F03.07
+	.WORD     65,   0402H	;5...F04.05
+	.WORD    186,   0a08H	;6...F10.07
+
+
+;上关联表,压缩格式,只列出了有关联的功能码项
+;;.......功能码绝对号......上关联功能码号
+TAB_UPPERRELATION:
+	.WORD     18,     18	;上关联表记录数
+	.WORD      7,    0006H	;1...F00.07
+	.WORD      8,    0007H	;2...F00.08
+	.WORD      9,    0006H	;3...F00.09
+	.WORD     19,    0006H	;4...F01.03
+	.WORD     40,    0006H	;5...F02.11
+	.WORD     49,    0305H	;6...F03.03
+	.WORD     51,    0307H	;7...F03.05
+	.WORD     53,    0103H	;8...F03.07
+	.WORD     56,    0006H	;9...F03.10
+	.WORD     62,    0405H	;10...F04.02
+	.WORD     65,    0006H	;11...F04.05
+	.WORD    153,    0006H	;12...F08.11
+	.WORD    179,    0006H	;13...F10.00
+	.WORD    180,    0006H	;14...F10.01
+	.WORD    181,    0006H	;15...F10.02
+	.WORD    187,    0a07H	;16...F10.08
+	.WORD    233,    0006H	;17...F13.00
+	.WORD    243,    0006H	;18...F13.10
+
+
+;参数属性表
+;Bitwise definition as:
+;Bit.5/4/3/2/1/0:小数点位置,0=无小数,2/3/4=1/2/3位小数,16=步长为2.
+;Bit.7/6:修改属性,40H='O';80H='X'.00H=其它
+;Bit.11/10/9/8:显示单位,100H='H';200H='A';300H='V';600H='%'.
+;Bit.12:上限约束方式,1000H=按位(HEX)约束,否则按十进制约束.
+;Bit.13:恢复出厂参数时是否容许覆盖,2000H=容许覆盖.
+;BIT.14:是否为有符号数显示,4000H=有符号数显示
+;BIT.15:是否为监控显示,8000H=为监控显示
+TAB_WORDATTRIB:
+	.WORD    2080H	;F00.00...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F00.01...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F00.02...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F00.03...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F00.04...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F00.05...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2183H	;F00.06...(dot:3,rw:2,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2183H	;F00.07...(dot:3,rw:2,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2183H	;F00.08...(dot:3,rw:2,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F00.09...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F00.10...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F00.11...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F00.12...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F00.13...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F00.14...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F00.15...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    0080H	;F01.00...(dot:0,rw:2,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0080H	;F01.01...(dot:0,rw:2,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0082H	;F01.02...(dot:2,rw:2,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0183H	;F01.03...(dot:3,rw:2,ut:1,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0480H	;F01.04...(dot:0,rw:2,ut:4,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0380H	;F01.05...(dot:0,rw:2,ut:3,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0282H	;F01.06...(dot:2,rw:2,ut:2,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0044H	;F01.07...(dot:4,rw:1,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0044H	;F01.08...(dot:4,rw:1,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0042H	;F01.09...(dot:2,rw:1,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0042H	;F01.10...(dot:2,rw:1,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0242H	;F01.11...(dot:2,rw:1,ut:2,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0080H	;F01.12...(dot:0,rw:2,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    2080H	;F02.00...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2183H	;F02.01...(dot:3,rw:2,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2082H	;F02.02...(dot:2,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2582H	;F02.03...(dot:2,rw:2,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2082H	;F02.04...(dot:2,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F02.05...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F02.06...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F02.07...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F02.08...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F02.09...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F02.10...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F02.11...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F02.12...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F02.13...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F02.14...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F02.15...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2082H	;F02.16...(dot:2,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F03.00...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F03.01...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2582H	;F03.02...(dot:2,rw:2,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F03.03...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F03.04...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F03.05...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F03.06...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F03.07...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F03.08...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F03.09...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F03.10...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F03.11...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F03.12...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F03.13...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F04.00...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2043H	;F04.01...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F04.02...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F04.03...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2043H	;F04.04...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F04.05...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2540H	;F04.06...(dot:0,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F04.07...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F04.08...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    6542H	;F04.09...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    2040H	;F04.10...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2502H	;F04.11...(dot:2,rw:0,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F05.00...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F05.01...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F05.02...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F05.03...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F05.04...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F05.05...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F05.06...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F05.07...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    3040H	;F05.08...(dot:0,rw:1,ut:0,hex:1,rst:1,neg:0,mnt:0)
+	.WORD    3040H	;F05.09...(dot:0,rw:1,ut:0,hex:1,rst:1,neg:0,mnt:0)
+	.WORD    3040H	;F05.10...(dot:0,rw:1,ut:0,hex:1,rst:1,neg:0,mnt:0)
+	.WORD    0002H	;F05.11...(dot:2,rw:0,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0202H	;F05.12...(dot:2,rw:0,ut:2,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    4002H	;F05.13...(dot:2,rw:0,ut:0,hex:0,rst:0,neg:1,mnt:0)
+	.WORD    4002H	;F05.14...(dot:2,rw:0,ut:0,hex:0,rst:0,neg:1,mnt:0)
+	.WORD    0003H	;F05.15...(dot:3,rw:0,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0000H	;F05.16...(dot:0,rw:0,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    2080H	;F06.00...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F06.01...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F06.02...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F06.03...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F06.04...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F06.05...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F06.06...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F06.07...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F06.08...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F06.09...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F06.10...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2043H	;F06.11...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F06.12...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    6343H	;F06.13...(dot:3,rw:1,ut:3,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F06.14...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6343H	;F06.15...(dot:3,rw:1,ut:3,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F06.16...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    2043H	;F06.17...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    6343H	;F06.18...(dot:3,rw:1,ut:3,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F06.19...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6343H	;F06.20...(dot:3,rw:1,ut:3,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F06.21...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    2043H	;F06.22...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2343H	;F06.23...(dot:3,rw:1,ut:3,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    6542H	;F06.24...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    2343H	;F06.25...(dot:3,rw:1,ut:3,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    6542H	;F06.26...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    2043H	;F06.27...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2043H	;F06.28...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    6542H	;F06.29...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    2043H	;F06.30...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    6542H	;F06.31...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    2043H	;F06.32...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F07.00...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F07.01...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F07.02...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2000H	;F07.03...(dot:0,rw:0,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F07.04...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F07.05...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F07.06...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F07.07...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F07.08...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2343H	;F07.09...(dot:3,rw:1,ut:3,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F07.10...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2343H	;F07.11...(dot:3,rw:1,ut:3,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F07.12...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2343H	;F07.13...(dot:3,rw:1,ut:3,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F07.14...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2343H	;F07.15...(dot:3,rw:1,ut:3,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F07.16...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2043H	;F07.17...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F07.18...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2043H	;F07.19...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F08.00...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2043H	;F08.01...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F08.02...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F08.03...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F08.04...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F08.05...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2540H	;F08.06...(dot:0,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2540H	;F08.07...(dot:0,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2043H	;F08.08...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F08.09...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F08.10...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F08.11...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F08.12...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F08.13...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F08.14...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F08.15...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    0000H	;F08.16...(dot:0,rw:0,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0000H	;F08.17...(dot:0,rw:0,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0000H	;F08.18...(dot:0,rw:0,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0103H	;F08.19...(dot:3,rw:0,ut:1,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0202H	;F08.20...(dot:2,rw:0,ut:2,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0302H	;F08.21...(dot:2,rw:0,ut:3,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    1000H	;F08.22...(dot:0,rw:0,ut:0,hex:1,rst:0,neg:0,mnt:0)
+	.WORD    1000H	;F08.23...(dot:0,rw:0,ut:0,hex:1,rst:0,neg:0,mnt:0)
+	.WORD    2040H	;F09.00...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F09.01...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F09.02...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F09.03...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    6542H	;F09.04...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F09.05...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    2043H	;F09.06...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2043H	;F09.07...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2043H	;F09.08...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2043H	;F09.09...(dot:3,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F09.10...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F09.11...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F09.12...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F10.00...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F10.01...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F10.02...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F10.03...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F10.04...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F10.05...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F10.06...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F10.07...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F10.08...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    6542H	;F11.00...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.01...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.02...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.03...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.04...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.05...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.06...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.07...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.08...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.09...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.10...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.11...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.12...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.13...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.14...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    6542H	;F11.15...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:1,mnt:0)
+	.WORD    2040H	;F11.16...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F11.17...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F11.18...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    3040H	;F11.19...(dot:0,rw:1,ut:0,hex:1,rst:1,neg:0,mnt:0)
+	.WORD    3040H	;F11.20...(dot:0,rw:1,ut:0,hex:1,rst:1,neg:0,mnt:0)
+	.WORD    2080H	;F11.21...(dot:0,rw:2,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.22...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.23...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.24...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.25...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.26...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.27...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.28...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.29...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.30...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.31...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.32...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.33...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.34...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.35...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.36...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F11.37...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F12.00...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F12.01...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F12.02...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F12.03...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F12.04...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F12.05...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    3040H	;F12.06...(dot:0,rw:1,ut:0,hex:1,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F13.00...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F13.01...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F13.02...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F13.03...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F13.04...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F13.05...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F13.06...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F13.07...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F13.08...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2042H	;F13.09...(dot:2,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F13.10...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F13.11...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F13.12...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2143H	;F13.13...(dot:3,rw:1,ut:1,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2542H	;F13.14...(dot:2,rw:1,ut:5,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F13.15...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F13.16...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    2040H	;F13.17...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    00c0H	;F14.00...(dot:0,rw:3,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    00c0H	;F14.01...(dot:0,rw:3,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    00c0H	;F14.02...(dot:0,rw:3,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    00c0H	;F14.03...(dot:0,rw:3,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    00c0H	;F14.04...(dot:0,rw:3,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    00c0H	;F14.05...(dot:0,rw:3,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    00c0H	;F14.06...(dot:0,rw:3,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    00c0H	;F14.07...(dot:0,rw:3,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    00c0H	;F14.08...(dot:0,rw:3,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    00c0H	;F14.09...(dot:0,rw:3,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    2040H	;F15.00...(dot:0,rw:1,ut:0,hex:0,rst:1,neg:0,mnt:0)
+	.WORD    1040H	;F15.01...(dot:0,rw:1,ut:0,hex:1,rst:0,neg:0,mnt:0)
+	.WORD    0080H	;F15.02...(dot:0,rw:2,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0002H	;F15.03...(dot:2,rw:0,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0380H	;F15.04...(dot:0,rw:2,ut:3,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0202H	;F15.05...(dot:2,rw:0,ut:2,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0082H	;F15.06...(dot:2,rw:2,ut:0,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0382H	;F15.07...(dot:2,rw:2,ut:3,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0382H	;F15.08...(dot:2,rw:2,ut:3,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0582H	;F15.09...(dot:2,rw:2,ut:5,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0582H	;F15.10...(dot:2,rw:2,ut:5,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0582H	;F15.11...(dot:2,rw:2,ut:5,hex:0,rst:0,neg:0,mnt:0)
+	.WORD    0040H	;F15.12...(dot:0,rw:1,ut:0,hex:0,rst:0,neg:0,mnt:0)
+
+
+;出厂设定值表
+TAB_ORGVALUE
+P00_ROM:	.WORD      0;F00.00...0
+	.WORD      0;F00.01...1
+	.WORD      0;F00.02...2
+	.WORD      1;F00.03...3
+	.WORD      1;F00.04...4
+	.WORD      0;F00.05...5
+	.WORD   5000;F00.06...6
+	.WORD   5000;F00.07...7
+	.WORD      0;F00.08...8
+	.WORD   5000;F00.09...9
+	.WORD      0;F00.10...10
+	.WORD     80;F00.11...11
+	.WORD      0;F00.12...12
+	.WORD      1;F00.13...13
+	.WORD    200;F00.14...14
+	.WORD    200;F00.15...15
+P01_ROM:	.WORD      0;F01.00...16
+	.WORD      0;F01.01...17
+	.WORD      4;F01.02...18
+	.WORD   5000;F01.03...19
+	.WORD   1400;F01.04...20
+	.WORD    380;F01.05...21
+	.WORD      1;F01.06...22
+	.WORD      1;F01.07...23
+	.WORD      1;F01.08...24
+	.WORD      1;F01.09...25
+	.WORD      1;F01.10...26
+	.WORD      1;F01.11...27
+	.WORD      0;F01.12...28
+P02_ROM:	.WORD      0;F02.00...29
+	.WORD    150;F02.01...30
+	.WORD      0;F02.02...31
+	.WORD      0;F02.03...32
+	.WORD      0;F02.04...33
+	.WORD      0;F02.05...34
+	.WORD      0;F02.06...35
+	.WORD      0;F02.07...36
+	.WORD      0;F02.08...37
+	.WORD      0;F02.09...38
+	.WORD      0;F02.10...39
+	.WORD      0;F02.11...40
+	.WORD      0;F02.12...41
+	.WORD      0;F02.13...42
+	.WORD      0;F02.14...43
+	.WORD      0;F02.15...44
+	.WORD      0;F02.16...45
+P03_ROM:	.WORD      0;F03.00...46
+	.WORD      0;F03.01...47
+	.WORD    200;F03.02...48
+	.WORD      0;F03.03...49
+	.WORD      0;F03.04...50
+	.WORD      0;F03.05...51
+	.WORD      0;F03.06...52
+	.WORD      0;F03.07...53
+	.WORD      0;F03.08...54
+	.WORD      0;F03.09...55
+	.WORD   3000;F03.10...56
+	.WORD     20;F03.11...57
+	.WORD      0;F03.12...58
+	.WORD      0;F03.13...59
+P04_ROM:	.WORD     25;F04.00...60
+	.WORD     60;F04.01...61
+	.WORD    500;F04.02...62
+	.WORD     25;F04.03...63
+	.WORD    100;F04.04...64
+	.WORD   1000;F04.05...65
+	.WORD    100;F04.06...66
+	.WORD   1500;F04.07...67
+	.WORD      0;F04.08...68
+	.WORD    500;F04.09...69
+	.WORD      0;F04.10...70
+	.WORD    100;F04.11...71
+P05_ROM:	.WORD      0;F05.00...72
+	.WORD      0;F05.01...73
+	.WORD      0;F05.02...74
+	.WORD      0;F05.03...75
+	.WORD      0;F05.04...76
+	.WORD      0;F05.05...77
+	.WORD   1000;F05.06...78
+	.WORD     10;F05.07...79
+	.WORD   2047;F05.08...80
+	.WORD      0;F05.09...81
+	.WORD    255;F05.10...82
+	.WORD      0;F05.11...83
+	.WORD      0;F05.12...84
+	.WORD     25;F05.13...85
+	.WORD     25;F05.14...86
+	.WORD    201;F05.15...87
+	.WORD      0;F05.16...88
+P06_ROM:	.WORD      0;F06.00...89
+	.WORD      1;F06.01...90
+	.WORD      4;F06.02...91
+	.WORD      7;F06.03...92
+	.WORD      0;F06.04...93
+	.WORD      0;F06.05...94
+	.WORD      0;F06.06...95
+	.WORD      0;F06.07...96
+	.WORD      0;F06.08...97
+	.WORD      5;F06.09...98
+	.WORD      0;F06.10...99
+	.WORD     50;F06.11...100
+	.WORD      0;F06.12...101
+	.WORD      0;F06.13...102
+	.WORD      0;F06.14...103
+	.WORD   1000;F06.15...104
+	.WORD   1000;F06.16...105
+	.WORD     10;F06.17...106
+	.WORD      0;F06.18...107
+	.WORD      0;F06.19...108
+	.WORD   1000;F06.20...109
+	.WORD   1000;F06.21...110
+	.WORD     10;F06.22...111
+	.WORD      0;F06.23...112
+	.WORD      0;F06.24...113
+	.WORD   1000;F06.25...114
+	.WORD   1000;F06.26...115
+	.WORD     10;F06.27...116
+	.WORD      0;F06.28...117
+	.WORD      0;F06.29...118
+	.WORD   5000;F06.30...119
+	.WORD   1000;F06.31...120
+	.WORD     10;F06.32...121
+P07_ROM:	.WORD      0;F07.00...122
+	.WORD      1;F07.01...123
+	.WORD      4;F07.02...124
+	.WORD      5;F07.03...125
+	.WORD      0;F07.04...126
+	.WORD      0;F07.05...127
+	.WORD      0;F07.06...128
+	.WORD      0;F07.07...129
+	.WORD      0;F07.08...130
+	.WORD      0;F07.09...131
+	.WORD   1000;F07.10...132
+	.WORD   1000;F07.11...133
+	.WORD      0;F07.12...134
+	.WORD      0;F07.13...135
+	.WORD   1000;F07.14...136
+	.WORD   1000;F07.15...137
+	.WORD      0;F07.16...138
+	.WORD      0;F07.17...139
+	.WORD   1000;F07.18...140
+	.WORD   5000;F07.19...141
+P08_ROM:	.WORD      2;F08.00...142
+	.WORD    100;F08.01...143
+	.WORD   1500;F08.02...144
+	.WORD      1;F08.03...145
+	.WORD      1;F08.04...146
+	.WORD      1;F08.05...147
+	.WORD    120;F08.06...148
+	.WORD    160;F08.07...149
+	.WORD   1000;F08.08...150
+	.WORD      0;F08.09...151
+	.WORD    800;F08.10...152
+	.WORD      0;F08.11...153
+	.WORD      1;F08.12...154
+	.WORD      1;F08.13...155
+	.WORD      0;F08.14...156
+	.WORD     10;F08.15...157
+	.WORD      0;F08.16...158
+	.WORD      0;F08.17...159
+	.WORD      0;F08.18...160
+	.WORD      0;F08.19...161
+	.WORD      0;F08.20...162
+	.WORD      0;F08.21...163
+	.WORD      0;F08.22...164
+	.WORD      0;F08.23...165
+P09_ROM:	.WORD      0;F09.00...166
+	.WORD      0;F09.01...167
+	.WORD      0;F09.02...168
+	.WORD      0;F09.03...169
+	.WORD   1000;F09.04...170
+	.WORD      0;F09.05...171
+	.WORD     10;F09.06...172
+	.WORD     10;F09.07...173
+	.WORD      0;F09.08...174
+	.WORD     10;F09.09...175
+	.WORD      0;F09.10...176
+	.WORD      0;F09.11...177
+	.WORD     10;F09.12...178
+P10_ROM:	.WORD      0;F10.00...179
+	.WORD      0;F10.01...180
+	.WORD      0;F10.02...181
+	.WORD      0;F10.03...182
+	.WORD      0;F10.04...183
+	.WORD     50;F10.05...184
+	.WORD     50;F10.06...185
+	.WORD      0;F10.07...186
+	.WORD      0;F10.08...187
+P11_ROM:	.WORD      0;F11.00...188
+	.WORD      0;F11.01...189
+	.WORD      0;F11.02...190
+	.WORD      0;F11.03...191
+	.WORD      0;F11.04...192
+	.WORD      0;F11.05...193
+	.WORD      0;F11.06...194
+	.WORD      0;F11.07...195
+	.WORD      0;F11.08...196
+	.WORD      0;F11.09...197
+	.WORD      0;F11.10...198
+	.WORD      0;F11.11...199
+	.WORD      0;F11.12...200
+	.WORD      0;F11.13...201
+	.WORD      0;F11.14...202
+	.WORD      0;F11.15...203
+	.WORD      0;F11.16...204
+	.WORD      0;F11.17...205
+	.WORD      0;F11.18...206
+	.WORD      0;F11.19...207
+	.WORD      0;F11.20...208
+	.WORD      0;F11.21...209
+	.WORD      0;F11.22...210
+	.WORD      0;F11.23...211
+	.WORD      0;F11.24...212
+	.WORD      0;F11.25...213
+	.WORD      0;F11.26...214
+	.WORD      0;F11.27...215
+	.WORD      0;F11.28...216
+	.WORD      0;F11.29...217
+	.WORD      0;F11.30...218
+	.WORD      0;F11.31...219
+	.WORD      0;F11.32...220
+	.WORD      0;F11.33...221
+	.WORD      0;F11.34...222
+	.WORD      0;F11.35...223
+	.WORD      0;F11.36...224
+	.WORD      0;F11.37...225
+P12_ROM:	.WORD      1;F12.00...226
+	.WORD      4;F12.01...227
+	.WORD      1;F12.02...228
+	.WORD      5;F12.03...229
+	.WORD      0;F12.04...230
+	.WORD      1;F12.05...231
+	.WORD      0;F12.06...232
+P13_ROM:	.WORD    500;F13.00...233
+	.WORD    200;F13.01...234
+	.WORD    200;F13.02...235
+	.WORD    200;F13.03...236
+	.WORD    200;F13.04...237
+	.WORD    200;F13.05...238
+	.WORD    200;F13.06...239
+	.WORD    200;F13.07...240
+	.WORD    200;F13.08...241
+	.WORD     10;F13.09...242
+	.WORD   5000;F13.10...243
+	.WORD     50;F13.11...244
+	.WORD      0;F13.12...245
+	.WORD      0;F13.13...246
+	.WORD   1300;F13.14...247
+	.WORD      0;F13.15...248
+	.WORD      0;F13.16...249
+	.WORD  65535;F13.17...250
+P14_ROM:	.WORD      0;F14.00...251
+	.WORD      0;F14.01...252
+	.WORD      0;F14.02...253
+	.WORD      0;F14.03...254
+	.WORD      0;F14.04...255
+	.WORD      0;F14.05...256
+	.WORD      0;F14.06...257
+	.WORD      0;F14.07...258
+	.WORD      0;F14.08...259
+	.WORD      0;F14.09...260
+P15_ROM:	.WORD      0;F15.00...261
+	.WORD      0;F15.01...262
+	.WORD      0;F15.02...263
+	.WORD      4;F15.03...264
+	.WORD    380;F15.04...265
+	.WORD      0;F15.05...266
+	.WORD     32;F15.06...267
+	.WORD   8000;F15.07...268
+	.WORD   3500;F15.08...269
+	.WORD   2100;F15.09...270
+	.WORD   1000;F15.10...271
+	.WORD   1000;F15.11...272
+	.WORD      0;F15.12...273
+
+
+
+; end of file
